@@ -1,0 +1,43 @@
+---
+title: "Reward Types"
+---
+
+[Previous: Gym Check-In](/rally-engage/gym-check-in) | [Next: Slicing Rules](/rally-engage/slicing-rules)
+
+### **Reward Types**
+
+Reward Types encompass the various currencies and fulfillment mechanisms available for clients to reward members for completing rewardable activities. These are not standalone features but rather mechanisms that shape how users interact with the platform’s features. Clients also have the option to customize reward names and help text through exceptions managed by the Optum product team.
+
+#### **Dollar-Denominated Rewards**
+
+1. **Client-Fulfilled Rewards**
+   - **Types Available**: This category includes HSA Dollars, HRA Dollars, HIA Dollars, Client-Fulfilled Payroll Credits, and Client-Fulfilled Premium Reduction Dollars.
+   - **How it works**: All these reward types behave identically within the system, though clients may fulfill them differently on their end (e.g., via payroll or premium adjustments). When a member completes a defined activity, they earn these rewards, and the system immediately reflects them as earned and redeemed in the app. Subsequently, these earnings are logged in the member’s ledger and included in reports sent to clients, who are responsible for the actual fulfillment.
+   - **Example**: Imagine a member completes a biometric screening, and the client has designated this activity to award $50 in HSA Dollars. As soon as the activity is verified, the app displays $50 as earned and redeemed under the member’s rewards section. This amount is then recorded in the ledger, and a report is generated for the client, who processes the $50 deposit into the member’s HSA account according to their internal procedures.
+2. **Optum-Fulfilled Rewards**
+   - **Types Available**: These include HSA, HRA, and HIA rewards.
+   - **How it works**: Optum handles the fulfillment through partners like Optum Bank (using systems such as HFS and recently added WEX). When a member earns these rewards, a file is generated based on the Client Reward Definition (CRD) and sent to distribution partners like Tabs or Oras. These partners deposit the funds into the member’s bank account and send fulfillment status updates back to Optum Loyalty, which then notifies the client via a report.
+   - **Example**: Suppose a member earns $75 in HRA funds by completing a wellness challenge. The system logs this earning, and a file is sent to Tabs based on the CRD. Tabs deposits $75 into the member’s designated account, confirms the transaction with Optum Loyalty, and Optum includes this in a fulfillment report sent to the client, ensuring transparency.
+3. **Gift Card Credits (Fulfilled by Capillary)**
+   - **How it works**: When a member completes an activity, the earned dollars are credited to their Rally Engage account managed by Capillary. Members can then redeem these dollars for gift cards through NeoCurrency within the app. The redemption process involves selecting a merchant, choosing an amount, and tapping “Redeem,” after which the member receives an e-gift card link. Past redemptions are accessible in the “My Redeemed Rewards” \> “My Gift Cards” section of the Rally Engage app, allowing members to revisit and use their gift cards anytime.
+   - **Example**: A member earns $25 for attending a health seminar. This amount is credited to their Rally Engage account. In the app, they navigate to the rewards section, select a $25 Amazon gift card, and tap “Redeem.” NeoCurrency processes this and provides a link to the e-gift card. Later, the member can go to “My Gift Cards” to click the link and shop on Amazon, with all past redemptions stored for easy access.
+4. **Physical Check (Fulfilled by USIO)**
+   - **How it works**: Upon completing an activity, dollars are credited to the Capillary ledger and immediately reflected as earned toward a physical check. Currently, a manual process periodically compiles these earnings into a file sent to USIO, though automation is planned. USIO mails the checks to members and provides a status update file at a fixed frequency via an FTP location, which the system uses to track fulfillment.
+   - **Example**: A member earns $100 for completing an annual physical. The $100 appears in the Capillary ledger instantly. Every two weeks (for example), a manual process gathers these earnings into a file sent to USIO. USIO mails a $100 check to the member’s address and uploads a status file to the FTP site, which updates the system to reflect that the reward has been fulfilled.
+
+#### **Other Currency Types**
+
+1. **Percentage Rewards**
+   - **How it works**: These rewards are expressed as percentages (e.g., Premium Reduction %, Deductible Credit %, Generic Reward %) and typically have a maximum earning cap of 100%. Members earn percentages toward this cap by completing activities, and these earnings are reported to clients immediately for fulfillment, as they are considered client-fulfilled.
+   - **Example**: A client offers a 25% premium reduction for completing a wellness check. When a member finishes this activity, the app shows they’ve earned 25% toward their 100% cap. This is logged and reported to the client instantly, who then applies the 25% reduction to the member’s next premium payment, with the member continuing to earn toward 100% through other activities.
+2. **Employer Credits**
+   - **How it works**: This is a flexible currency where clients define what one credit represents (e.g., 1 credit might equal $100 or another value). Clients can set a maximum earning cap, and members earn credits upon completing activities as per the client’s design. For client-fulfilled credits, earnings are reported immediately; for partner-fulfilled items, reporting occurs after fulfillment.
+   - **Example**: A client decides 1 credit equals $50 and sets a cap of 4 credits ($200). A member earns 2 credits ($100) for getting a flu shot. The app shows this immediately, and a report is sent to the client for fulfillment (e.g., a $100 payroll adjustment). If fulfilled by a partner, the report waits until the partner confirms delivery.
+3. **Employer Points (Replaced Rally Coins)**
+   - **How it works**: Originally Rally Coins (an Optum-owned currency), this transitioned to Employer Points to shift liability to clients, with plans to eventually merge into Employer Credits. When a client assigns Employer Points for an activity, members earn those points plus an equivalent amount of Rally Points. Standard Rally Points are globally defined (e.g., 500 for a flu shot) and cannot be customized by clients, who must select from a fixed schedule for Employer Points. This ensures Optum controls Rally Point distribution.
+   - **Example**: A client offers 500 Employer Points for a flu shot, and the standard Rally Points for this activity is 500\. A member completes the flu shot and earns 500 Employer Points (reported to the client) and 500 Rally Points behind the scenes, totaling 1,000 Rally Points in their account. If the client didn’t offer Employer Points, the member would still get 500 Rally Points. The client can’t say, “Give 10,000 Employer Points,” but must pick 500 from the standard list, maintaining consistency.
+
+#### **Customization**
+
+- **Reward Name & Help Text**: Clients can rename rewards (e.g., “Wellness Dollars” or “B-Well Bucks”) and customize help text via exceptions captured by Optum. This is especially relevant for choice rewards, where help text appears as members select their reward, aiding decision-making.
+- **Example**: A client renames Employer Credits to “B-Well Bucks” and adds help text: “Use these bucks for health perks\!” When a member earns 2 B-Well Bucks ($100) and chooses a reward, the app shows this custom name and text, enhancing clarity.

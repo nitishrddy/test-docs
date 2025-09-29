@@ -1,0 +1,58 @@
+---
+title: "Gym Check-In"
+---
+
+[Previous: Rally Stride](/rally-engage/rally-stride) | [Next: Reward Types](/rally-engage/reward-types)
+
+### **Gym Check-In**
+
+Gym Check-In is a rewardable activity that incentivizes members to visit the gym a target number of times per month. Like Rally Stride, it is an optional feature that clients can enable for their member population, appearing only if activated. Members earn rewards by checking in at gyms via the app or website, with configurable targets and an optional alternative for those unable to participate physically.
+
+#### **Key Functionality**
+
+- **Availability**: Gym Check-In is visible to members only if enabled by the client, appearing on the home screen and rewardable activity section.
+- **Check-In Process**:
+  - Members enroll in Gym Check-In upon first use.
+  - Using geolocation, the app displays public gyms within 500 meters (0.3 miles) of the member’s location for check-in.
+  - Optional “Home Gym” feature: Clients can enable a “Home Gym” option, ensuring members always have at least one check-in location.
+- **Monthly Target**:
+  - The default target is 12 unique gym check-ins per month.
+  - Clients can adjust this target (e.g., 5–15 check-ins).
+- **Reward Options**:
+  - Clients define the reward: employer points, credits, dollars (via HSA, client reward, or gift card).
+  - Earnings can count toward a member’s “boulders” or primary max cap, configurable by the client.
+- **Program Duration**: Clients can set Gym Check-In to run year-round (12 cycles) or fewer (e.g., 10 months).
+- **Physical Activity Exemption**:
+  - Members can request an exemption via the Settings page with a simple attestation.
+  - If enabled, an alternative activity (default: complete any 3 missions per month) becomes available, offering the same reward as Gym Check-In.
+  - Members with an exemption remain eligible for Gym Check-In but can only earn from one activity (Check-In or the alternative) per month, whichever is completed first.
+- **Special Case**: If both Rally Stride and Gym Check-In are active with alternatives, completing 3 missions counts as completing both alternatives, rewarding both (due to identical thresholds).
+
+#### **Client Configuration Options**
+
+- **Enable/Disable**: Choose whether Gym Check-In is available to their member population.
+- **Reward Customization**: Set the reward type and value for meeting the monthly target.
+- **Target Adjustment**: Modify the default target of 12 check-ins to a custom number (e.g., 5–15).
+- **Cycle Duration**: Configure the program for 12 months or fewer (e.g., 10 months).
+- **Home Gym Option**: Enable a “Home Gym” check-in location for all members.
+- **Alternative Activity**: Opt to offer an alternative (default: complete any 3 missions) for members with physical limitations.
+
+#### **Member Experience**
+
+- **Enrollment**: Members enroll in Gym Check-In via the app.
+- **Checking In**:
+  - A Gym Check-In card appears on the home screen, showing progress (e.g., “4/12 check-ins”).
+  - Members can check in once per day at a gym within 500 meters or the “Home Gym” (if enabled).
+- **Tracking Progress**: Each check-in increments the monthly progress counter.
+- **Geolocation**:
+  - Requires location permissions on mobile apps or browsers.
+  - Mobile apps use native OS location services; browsers use the Geolocation API (GPS preferred, falling back to IP-based location if needed).
+- **Earning Rewards**: Members earn the configured reward upon meeting the monthly target.
+- **Alternative Option**: If exempted and an alternative is available, members see it in the rewardable activity section and can complete it instead of or alongside Gym Check-In (but earn from only one per month).
+
+#### **Additional Notes**
+
+- **Gym Additions**: Members can request new gyms via the support team (name, address, lat/long); validated gyms are added system-wide, not scoped to individual users.
+- **Geolocation Limitations**: Browser users with VPNs may experience inaccurate gym locations due to IP-based fallbacks (less common on mobile apps).
+- **Special Integration**: For Kaiser Hawaii, gym visits can be ingested from One Pass monthly reports (45 visits annually target), supplementing app check-ins. This is not available for other clients currently.
+- **Enhancement Over Legacy**: The 3-mission alternative improves on Legacy Rally’s simple button-click reward, promoting engagement.

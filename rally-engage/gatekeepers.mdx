@@ -1,0 +1,26 @@
+---
+title: "Gatekeepers"
+---
+
+[Previous: Slicing Rules](/rally-engage/slicing-rules) | [Next: Max Cap](/rally-engage/max-cap)
+
+### **Gatekeepers**
+
+Gatekeepers are activities that must be completed before members can earn rewards from “gate-kept” activities, enforcing a sequential structure in reward programs.
+
+#### **How They Work**
+
+- **Gatekeeper & Gate-Kept Relationship**: Clients can designate certain activities as gatekeepers and others as gate-kept. Gatekeeper activities act as prerequisites—until all are completed, members can’t earn rewards from gate-kept activities. In the app, gate-kept activities display a lock symbol until the gatekeepers are done, visually signaling their status. Both gatekeepers and gate-kept activities must be defined together; one without the other isn’t valid.
+- **Reward Issuance Rules**: If a member completes a gate-kept activity before its gatekeeper(s), no reward is issued until the gatekeeper(s) are completed. Once the gatekeeper(s) are done, the reward for the gate-kept activity is released, even if it was completed earlier. Activities not marked as gate-kept reward immediately upon completion, regardless of gatekeeper status. For example, a client might set a health survey as a gatekeeper and a flu shot as gate-kept, meaning no flu shot reward until the survey is done, but a biometric screening (not gate-kept) rewards right away.
+- **Multiple Gatekeepers**: A client can define multiple gatekeepers for a program. All must be completed before any gate-kept activity unlocks—no partial unlocking exists. There’s no granular mapping (e.g., gatekeeper X unlocks gate-kept A, gatekeeper Y unlocks B); it’s an all-or-nothing rule at the program level. For instance, if a client sets health survey, quiz, and consent form as gatekeepers, a member must finish all three before earning from any gate-kept activity like a flu shot.
+- **Validation Requirements**: The system enforces that gatekeepers require at least one gate-kept activity, and gate-kept activities require at least one gatekeeper. Defining only gatekeepers or only gate-kept activities isn’t meaningful and isn’t allowed. This ensures the feature serves its purpose of structuring the program.
+
+#### **Example**
+
+A client designs a program where the health survey is a gatekeeper, “Get a flu shot” is gate-kept, and biometric screening is a regular activity.
+
+Health Survey \- Gatekeeper \- $50 reward  
+Biometric Screening \- Regular \- $50 reward  
+Get a flu shot \- Gatekept \- $25 reward
+
+The member sees the flu shot in their app with a lock symbol. They get a flu shot on January 15th but haven’t done the survey, so no reward is issued. On February 1st, they complete the biometric screening and earn $50 immediately, as it’s not gate-kept. On February 10th, they finished the health survey. The flu shot’s lock disappears, and they will earn $75 for it, $50 for completing the survey and $25 for the flu shot activity retroactively. If the client had added a quiz as a second gatekeeper, the flu shot reward would wait until both the survey and quiz were done.

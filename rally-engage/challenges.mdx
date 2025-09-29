@@ -1,0 +1,130 @@
+---
+title: "Challenges"
+---
+
+[Previous: Rewardable Activities](/rally-engage/rewardable-activities) | [Next: Discount Offers](/rally-engage/discount-offers)
+
+### **Challenges**
+
+Challenges are group-based activities with a fixed start date and end date, designed to encourage participants to achieve a specific target over the challenge period. For example, a challenge might require participants to "complete 20 miles of walking in five days." Challenges focus on individual participation (though team challenges are mentioned as covered in a separate document) and can be configured as either public or private.
+
+---
+
+**Key Characteristics**:
+
+- Fixed start and end dates.
+- Overall target (e.g., 20 miles in 5 days) rather than daily goals.
+- Progress is tracked over the entire challenge period.
+- Checkpoints allow participants to earn points for meeting milestones, but there are no daily requirements.
+
+#### **Supported Activities**
+
+Challenges are based on activities that typically require user input or integration with a tracker. Examples include:
+
+- Number of steps logged.
+- Number of miles logged (e.g., walking, swimming).
+- Number of glasses of water consumed.
+- Minutes of exercise completed.
+- Other activities beyond simple check-ins.
+
+#### **Types of Challenges**
+
+1. **Individual Challenges** (Primary focus of this guide):
+
+   - Participants work toward a personal goal.
+   - Can be either public or private (details below).
+
+2. **Team Challenges**:
+   - Covered in a separate document; not detailed here.
+
+---
+
+### **Individual Challenges: Public vs. Private**
+
+#### **Public Challenges**
+
+- **Definition**: Defined at the product level and available globally to all users.
+- **Lifecycle**: Operate on a product-defined schedule with no client-specific customizations.
+- **Templates**: Use a fixed set of templates that rotate throughout the year.
+- **Accessibility**: Open to everyone; no restrictions on participation.
+- **Checkpoints**: Feature a fixed number of predefined checkpoints (e.g., 5, 10, 15 miles in a 20-mile challenge). Participants earn "rally points" for meeting checkpoints and additional points for completing the challenge.
+
+#### **Private Challenges**
+
+- **Definition**: Configurable by clients with customizable settings.
+- **Configuration Options**:
+  - **Start Date and End Date**: Chosen by the client.
+  - **Activity**: Specific activity type (e.g., walking, swimming).
+  - **Target**: Goal to achieve (e.g., 20 miles).
+  - **Listing Date**: When the challenge appears for members to join.
+  - **Last Join Date**: Optional deadline after which members cannot join (if not defined, members can join until the end date).
+  - **Visibility**: Can be marked as hidden in the UI.
+  - **Affiliation Restrictions**: Can be limited to a subset of affiliations within one organization (e.g., only affiliations 3 and 4).
+- **Joining Rules**:
+  - If a member joins a challenge before its start date, a countdown timer (e.g., "Challenge starts in XYZ days") is displayed.
+  - If no last join date is set, members can join up to the end date (including the last day).
+  - If a last join date is defined, the challenge disappears from the UI after that date.
+- **Visibility and Access**:
+  - **Not Hidden**: Visible to all members of the defined affiliations (or the entire organization if no subset is specified) on the explore page in the UI.
+  - **Hidden**: Only discoverable via an invite code or link shared by the client or through a marketing campaign.
+  - **Affiliation \+ Hidden**: If hidden and restricted to a subset of affiliations, only members in those affiliations can join, even with the invite code.
+  - **No Granular Restrictions**: Cannot restrict within an affiliation (e.g., only members over 50 in affiliation 3). Anyone in the specified affiliation can join if they have access to the invite code/link.
+- **Invite Code/Link Sharing**:
+  - Clients can send invite codes themselves or through marketing campaigns.
+  - If shared beyond the intended audience within the affiliation, anyone in that affiliation can join (no further slicing possible).
+
+---
+
+### **Challenge Participation and Progress**
+
+- **Check-Ins**: Once the challenge starts, members can check in to log progress (e.g., miles walked, steps taken).
+- **Progress Tracking**: Progress accrues as check-ins are recorded.
+- **Checkpoints (Public Challenges)**:
+  - Fixed milestones (e.g., 5, 10, 15 miles in a 20-mile challenge).
+  - Participants earn "rally points" at each checkpoint and additional points upon completion.
+- **Homepage Visibility**: Active challenges (including upcoming ones not yet started) members are participating in appear on the homepage for easy access and check-ins.
+
+---
+
+### **Leaderboard**
+
+- **Overview**: Each active challenge includes a leaderboard accessible on the challenge page.
+- **Features**:
+  - Displays the participant’s rank and progress relative to others.
+  - Shows a "podium" with the top 3 participants (avatar, screen name, total progress).
+- **Scope**: Global for public challenges; participants across different clients can see each other.
+- **Refresh Rate**: Updates on a 24-hour cycle at 12 noon CT each day
+- **Privacy**:
+  - No opt-out option; all participants appear on the leaderboard.
+  - Pseudonymous screen names and non-real avatars help protect privacy.
+- **Rewards**: No additional rewards for leaderboard position (e.g., 1st, 2nd, 3rd receive the same points as others who meet the target).
+
+---
+
+### **Rewards**
+
+- **Client Configurability**: Clients can define rewards for challenge completion.
+- **Reward Options**:
+  - **Specific Instance**: Reward a single challenge (public or private).
+  - **Challenge Type**: Reward completion of a specific type (e.g., "SF Stomp" anytime during the year).
+  - **Reward based on broad categories**:
+    - Any public challenge.
+    - Any walking challenge.
+    - Any non-walking challenge.
+    - Any individual or team challenge.
+  - **Combinations**: Flexible combinations of the above are possible.
+- **Common Practices**:
+  - Rewarding private challenges.
+  - Blanket rewards like "complete any public challenge" or "complete any walking challenge."
+
+---
+
+### **Additional Notes**
+
+- **Org Restrictions**: Private challenges are limited to one organization and cannot span multiple organizations.
+- **UI Behavior**:
+  - Hidden challenges require an invite code/link for discovery.
+  - Non-hidden private challenges appear on the explore page for eligible members.
+- **Limitations**:
+  - No way to restrict participation within an affiliation beyond affiliation-level settings (e.g., age-based targeting is not possible within the system).
+  - Leaderboard participation is mandatory with no opt-out.

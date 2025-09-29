@@ -1,0 +1,253 @@
+---
+title: "Rewardable Activities"
+---
+
+[Previous: Questions](/rally-engage/questions) | [Next: Challenges](/rally-engage/challenges)
+
+# **Rewardable Activities**
+
+Rewardable Activities are a core feature in the product, allowing clients (employers or payers) to incentivize their members for completing specific actions. These activities are distinct from other engagement mechanisms like missions, challenges, rally points, offers, sweepstakes, or auctions, focusing specifically on employer- or payer-defined rewards. This guide breaks down the feature into sections, detailing the types, mechanics, reward structures, and supporting systems.
+
+---
+
+## **1\. General Overview of Rewardable Activities**
+
+### **Definition**
+
+- **Rewardable Activities**: Actions or behaviors that employers or payers choose to reward members for completing, typically tied to employer or payer reward programs.
+- Distinguished from other activities (e.g., missions, challenges) that members can redeem points for but are not classified as "rewardable activities."
+- Fully customizable by clients to align with their reward programs.
+
+### **Configuration**
+
+- Each **affiliation** (client group) has a defined set of rewardable activities stored in the **CRD (Client Reward Definition)**.
+- Each activity is associated with:
+  1. A **predefined reward amount**.
+  2. A **reward type** (covered in a separate document).
+- Reward currencies include:
+  1. **Dollars ($)**.
+  2. **Employer Credits**.
+  3. **Employer Points**.
+  4. **Percentage**.
+- Order of Rewardable activities:
+  1. First sort: Sort by assigned weight (custom value that can optionally be added to make a specific activity appear first)
+  2. Second sort: Sort by expiration date \- expiring soonest appears first
+
+**Activity Scope**
+
+- Activities can occur **inside the app** (e.g., completing a form) or **outside the app** (e.g., getting a flu shot).
+- Completion data flows into the system differently based on activity type (see below).
+
+---
+
+## **2\. Types of Rewardable Activities**
+
+### **2.1 Generic Rewardable Activities**
+
+- **Definition**: Broad category covering activities tracked via external data sources.
+- **Examples**: "Get your flu shot," "Complete an annual physical exam."
+- **Data Sources**:
+  - **Offline Files**: Uploaded by clients.
+  - **Claims Data**: Received from payers or health providers.
+- **Integration**: Data enters the system primarily via the **IDT Feed** ("I Did This" feed) from Optum:
+  - Arrives as a single **behavioral event** with a unique **Activity ID**.
+- **Reward Logic**:
+
+  - System checks the Activity ID against the member’s reward plan (per CRD) to determine incentive.
+  - Rewards are issued if the member qualifies based on activity Id, affiliation, and slicing rules
+
+---
+
+### **2.2 Attestations**
+
+- **Definition**: Activities where members self-confirm completion due to unavailable external data or as a standalone verification method.
+- **Use Cases**:
+
+  - **No External Data Available**: For affiliations lacking offline files or claims data (e.g., confirming a physical exam).
+  - **Behavioral Confirmation**: Activities with no verifiable source (e.g., "I’ve been tobacco-free for X days").
+
+- **Member Experience**:
+  - Members access the activity, view an "About" description, and confirm completion via a button (e.g., "Confirm" or "Attest," customizable by client).
+
+#### **Types of Attestations**
+
+1. **Simple Attestation**:
+
+   - **Process**:
+     - Member sees predefined, client-customized text (e.g., "I attest that I am tobacco-free for the last 6 months").
+     - A pop-up displays the text; member clicks "Confirm."
+   - **Data Input**: None required from the member.
+   - **Completion**: Confirmed immediately upon clicking "Confirm."
+
+2. **Linkout Attestation**:
+
+   - **Process**:
+
+     - Pop-up displays a clickable link (e.g., to a video, article, or resource) instead of text.
+     - Member clicks the link, completes the activity (e.g., watches a video), returns to the app/website, and clicks "Confirm."
+
+   - **Customization**: Clients define the link and accompanying text.
+   - **Completion**: Confirmed after returning and clicking "Confirm."
+
+3. **Form-Based Attestation**:
+
+   - **Process**:
+
+     - Pop-up displays a customizable form with fields defined by the client.
+     - Member inputs data and submits.
+
+   - **Form Fields**:
+     - **Date Field**: e.g., "Date of service" for a doctor visit.
+     - **Text Field**: e.g., "What fitness activity did you do?"
+     - **Dropdown Field**: e.g., selectable options (exact types/limitations to be confirmed later).
+   - **Examples for form fields**:
+     - Fitness reimbursement: "Amount paid."
+     - Doctor visit: "Date of visit."
+   - **Flexibility**: Forms are dynamically created based on client needs, avoiding fixed templates.
+
+#### **Subset: Rewardable Videos and Articles**
+
+- **Definition**: Specific attestation types where members watch a video or read an article and confirm completion.
+- **Mechanics**:
+
+  - **Rewardable Video**:
+    - Video file uploaded and playable within the activity details page (app or website).
+    - "Claim Reward" button appears in the top-right corner.
+  - **Rewardable Article**:
+    - Long-form text displayed on the activity details page.
+    - "Claim Reward" button appears in the top-right (website) or bottom (app).
+
+- **Reward Timing**: Immediate upon completion and claiming.
+- **Purpose**: Encourages in-app engagement with underlying content.
+
+---
+
+### **2.3 Biometric Screening**
+
+- **Definition**: Activities tied to biometric screenings, powered by a distinct integration.
+- **Data Source**: **Biometric Screening Event** via Optum’s biometric integration.
+- **Examples**: Cholesterol checks, glucose levels, BMI measurements.
+
+#### **Subtype: Biometric Targets**
+
+- **Definition**: Biometric screenings with additional reward rules based on targets.
+- **Examples**:
+  - "Achieve a BMI of 25 or lower."
+  - "Lower LDL cholesterol to X level."
+- **Supported Metrics**: LDL, HDL, glucose, BMI.
+- **Reward Logic**:
+  - System checks biometric data against client-defined targets.
+  - Rewards issued only if the target is met.
+- **Improvement-Based Targets**:
+  - Rewards members for progress (e.g., "Drop BMI by 2 points").
+  - Example: BMI drops from 30 (last year) to 27 (this year) → rewarded for 3-point improvement.
+- **Baseline Logic**:
+  - **First Year**: Initial biometric entry sets the baseline (no historical data).
+    - e.g., BMI of 27.5 → baseline; no reward unless improved to 25.5 next time.
+  - **Subsequent Years**: Last entry becomes the baseline (e.g., November 2025 BMI of 209.5 → baseline for 2026).
+- **Reasonable Alternative Program** (covered separately) can be offered to member if they fail to meet a biometric target. This is available to members only if configured by the client.
+
+---
+
+### **2.4 Missions and Challenges**
+
+- **Definition**: Predefined activities (e.g., fitness challenges) that clients can opt to reward.
+- **Reward Logic**: Completion triggers immediate eligibility check and reward issuance.
+
+---
+
+### **2.5 Rewardable Quizzes**
+
+- **Definition**: Interactive quizzes from a catalog of 25+ prebuilt options.
+- **Configuration**:
+  1. Clients select which quizzes to reward.
+  2. Only rewardable quizzes are visible to members.
+- **Member Experience**:
+  1. Access via app/website; includes a description of quiz relevance.
+  2. Question-by-question flow (similar to surveys).
+- **Scoring**:
+  1. Predefined threshold for passing (e.g., X correct answers).
+  2. If threshold met → quiz marked complete, reward issued.
+  3. If threshold not met → retake required.
+     - As of February 2025: Second failure still marks quiz as complete to reduce member abrasion.
+- **Question Types**:
+  1. **Single-Select Multiple Choice**:
+     - One correct answer; member selects one option.
+  2. **Multi-Select Multiple Choice**:
+     - Multiple correct answers; member selects all via checkboxes.
+     - Must select **all correct answers** and **no incorrect ones** to count as correct answer
+- **Reward Timing**: Immediate upon completion.
+
+---
+
+### **2.6 Rewardable X of Y Activities**
+
+- **Definition**: Compound activities combining multiple rewardable types with customizable logic.
+- **Logic Examples**:
+  - "Complete any 2 of 5 activities."
+  - "Complete all 3 of the below."
+  - "Complete 1 of 4 options."
+- **Nesting**:
+  - Can include any activity type (e.g., attestation, biometric target, quiz).
+  - Supports nested X of Y (e.g., "Complete 1 of 3," where one option is "Complete 2 of 4 screenings").
+- **Flexibility**: Allows complex combinations for creative reward structures.
+
+### **2.7 Others**
+
+In addition, we have the following rewardable activities, which are unique in their own ways and covered in standalone guides:
+
+1. Stride
+2. Gym Check In
+3. Fitness Reimbursement
+
+---
+
+## **3\. Reward Processing**
+
+- **Eligibility Check**: Based on the member’s reward plan (CRD) and activity completion.
+- **Timing**:
+  - **Attestations, Videos, Articles, Quizzes, Missions, and challenges**: Immediate upon confirmation.
+  - **IDT, Biometric**: Depends on IDT/biometric feed processing.
+- **Visibility**: Rewards reflect in the **Reward Status** section if eligible.
+
+---
+
+## **4\. Slicing Rules**
+
+### **Definition**
+
+- **Slicing Rules**: A mechanism to filter and display rewardable activities to a specific subset of members within an affiliation, ensuring relevance and targeted rewarding.
+- **Purpose**: Allows clients to reward only certain demographics or conditions (e.g., "Reward females for breast cancer screening" or "Reward members over 50 for colorectal cancer screening").
+
+### **Configuration**
+
+- Slicing rules are based on member profile data and activity history, including:
+  - **Demographics**: Age, gender.
+  - **Biometric Data**: BMI, blood sugar, etc.
+  - **Health Conditions**: Presence of specific diagnoses.
+  - **Activity History**: Completion of certain activities within the last X months.
+- **Common Criteria**:
+  - **Gender**: e.g., "Females only" for breast cancer screening.
+  - **Age**: e.g., "Members over 54" for colorectal cancer screening.
+  - **Conditions**: Five prevalent conditions:
+    1. Asthma
+    2. COPD
+    3. Congestive Heart Failure
+    4. Diabetes
+    5. Coronary Artery Disease
+
+### **Data Sources**
+
+Slicing rules are powered by four sources:
+
+1. **Eligibility File**: Provides basic member data (age, gender).
+2. **Surveys**: Member-input data on conditions, BMI, blood sugar, etc.
+3. **Evisor Integration**: Health-related data, including diagnoses.
+4. **Biometric Integration**: Biometric screening results (e.g., BMI, glucose).
+
+### **Member Experience of Slicing Rules**
+
+- When a member meets slicing rule criteria, the rewardable activity appears in the UI.
+- If a member no longer meets criteria (e.g., condition resolves or age changes), the activity **remains visible** to avoid confusion.
+  - **Eligibility Callout**: Below the reward amount, a **starred note** indicates eligibility (e.g., "Only members with XYZ condition eligible for this reward" or "Only members meeting this criteria eligible").
+  - Ensures transparency without hiding previously accessible activities.
