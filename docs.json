@@ -1,48 +1,72 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "Rally Engage Documentation",
+  "name": "Optum Engage Documentation",
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
   "colors": {
     "primary": "#FF612B",
     "light": "#d74120"
   },
   "background": {
     "color": {
-      "light": "#Faf8f2"
+      "light": "#FFFFFF"
     }
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
         "tab": "Rally Engage",
         "groups": [
           {
-            "group": "Feature Guides",
+            "group": "Overview",
+            "pages": ["index"]
+          },
+          {
+            "group": "Rewardable Activities Concepts",
             "pages": [
-              "index",
-              "rally-engage/rally-stride",
-              "rally-engage/gym-check-in",
+              "rally-engage/rewardable-activities",
               "rally-engage/reward-types",
+              "rally-engage/gift-cards",
+              "rally-engage/mastercard-paypal-venmo-with-bank-transfer",
               "rally-engage/slicing-rules",
-              "rally-engage/gatekeepers",
               "rally-engage/max-cap",
               "rally-engage/affiliation-change-and-max-cap",
-              "rally-engage/mastercard-paypal-venmo-with-bank-transfer",
-              "rally-engage/gift-cards",
-              "rally-engage/missions",
-              "rally-engage/team-challenges",
-              "rally-engage/auctions",
-              "rally-engage/donations",
-              "rally-engage/spotlight-campaigns",
-              "rally-engage/top-picks",
-              "rally-engage/questions",
-              "rally-engage/rewardable-activities",
-              "rally-engage/challenges",
-              "rally-engage/discount-offers",
-              "rally-engage/sweepstakes",
-              "rally-engage/benefits-cards-and-resource-links"
+              "rally-engage/gatekeepers"
             ]
+          },
+          {
+            "group": "Activity Types",
+            "pages": [
+              "rally-engage/missions",
+              "rally-engage/challenges",
+              "rally-engage/team-challenges",
+              "rally-engage/gym-check-in",
+              "rally-engage/rally-stride"
+            ]
+          },
+          {
+            "group": "Rally Rewards",
+            "pages": [
+              "rally-engage/discount-offers",
+              "rally-engage/donations",
+              "rally-engage/auctions",
+              "rally-engage/sweepstakes"
+            ]
+          },
+          {
+            "group": "Promotions & Campaigns",
+            "pages": [
+              "rally-engage/spotlight-campaigns",
+              "rally-engage/top-picks"
+            ]
+          },
+          {
+            "group": "Benefits & Resources",
+            "pages": ["rally-engage/benefits-cards-and-resource-links"]
           }
         ]
       }
