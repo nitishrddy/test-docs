@@ -4,8 +4,12 @@
   "name": "Rally Engage Documentation",
   "colors": {
     "primary": "#FF612B",
-    "light": "#d74120",
-    "dark": "#d74120"
+    "light": "#d74120"
+  },
+  "background": {
+    "color": {
+      "light": "#Faf8f2"
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -48,12 +52,11 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo.png",
+    "dark": "/logo/logo.png"
   },
   "navbar": {
-    "links": [],
-    "primary": null
+    "links": []
   },
   "contextual": {
     "options": [
